@@ -63,7 +63,7 @@ class App {
         }
 
         const btn = new ARButton(this.renderer)
-        document.body.appendChild(btn)
+
 
         controller = this.renderer.xr.getController(0)
         controller.addEventListener('select', onSelect)

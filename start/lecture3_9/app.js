@@ -46,6 +46,7 @@ class App {
     }
 
     setupXR() {
+        console.log('we are working')
         this.renderer.xr.enabled = true
 
         const self = this
@@ -60,7 +61,9 @@ class App {
             self.scene.add(mesh)
             self.meshes.push(mesh)
         }
+
         const btn = new ARButton(this.renderer)
+        document.body.appendChild(btn)
 
         controller = this.renderer.xr.getController(0)
         controller.addEventListener('select', onSelect)

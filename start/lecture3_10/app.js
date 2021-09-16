@@ -143,18 +143,21 @@ class App {
 
         }
         const btn = new ARButton(this.renderer, {
-            onSessionStart, onSessionEnd, sessionInit: {
-                optionalFeatures: ['dom-overlay'], domOverlay: {
+            onSessionStart, onSessionEnd,
+            sessionInit: {
+                optionalFeatures: ['dom-overlay'],
+                domOverlay: {
                     root: document.body
                 }
             }
-        })
+        });
 
         const controller = this.renderer.xr.getController(0)
         controller.addEventListener('connected', onConnected)
 
         this.scene.add(controller)
-        this.controller = this.renderer.setAnimationLoop(this.render.bind(this));
+        this.controller = controller
+        this.renderer.setAnimationLoop(this.render.bind(this));
     }
 
     resize() {

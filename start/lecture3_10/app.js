@@ -105,7 +105,6 @@ class App {
         this.renderer.xr.enabled = true;
 
         const self = this;
-        let controller;
 
         function onConnected(event) {
             if (self.info === undefined) {
@@ -152,8 +151,8 @@ class App {
             }
         });
 
-        const controller = this.renderer.xr.getController(0)
-        controller.addEventListener('connected', onConnected)
+        const controller = this.renderer.xr.getController(0);
+        controller.addEventListener('connected', onConnected);
 
         this.scene.add(controller)
         this.controller = controller
